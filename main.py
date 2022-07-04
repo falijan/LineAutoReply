@@ -1,5 +1,7 @@
 
+from operator import and_
 from fastapi import FastAPI, Request, Header, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, JoinEvent, LeaveEvent
@@ -7,6 +9,7 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage, JoinEvent
 from sqlalchemy import create_engine, and_
 from sqlalchemy.orm import Session
 from SourceTable import Source
+
 
 line_bot_api = LineBotApi('3EyCQCCLyB02oXfxM5rD9fXjCZ0NWkqe/PPoCafOt1fYWdSC8PYPr87t0j/BpGSsWCqCTjiRrffXGv8B1W+3yqv/AI87caSFPcrCX8NXKLjvkZEVcgzK6AKlU6b2C144lr7jTXYRMpO+vfcqvebnnQdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('7ddd099b6823a1cf03f8f4a35153c7f6')
