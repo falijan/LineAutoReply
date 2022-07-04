@@ -1,4 +1,3 @@
-from tkinter.tix import Tree
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import registry
 
